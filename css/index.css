@@ -1,0 +1,404 @@
+/* Reset mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f4f7f6;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #006d77;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10%;
+}
+
+.logo h1 {
+  margin-left: 10px;
+  font-size: 1.8em;
+}
+
+.logo p {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #83c5be;
+}
+
+/* Main section */
+main {
+  padding: 30px 20px;
+}
+
+h2 {
+  color: #006d77;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Section styles */
+section {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#home {
+  text-align: center;
+}
+
+#home p {
+  font-size: 1.2em;
+  margin: 10px 0 20px;
+}
+
+#home button {
+  padding: 10px 20px;
+  background-color: #006d77;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#home button:hover {
+  background-color: #83c5be;
+}
+
+/* Tour section */
+.tour-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.tour {
+  background-color: #edf6f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.tour:hover {
+  transform: translateY(-5px);
+}
+
+.tour h3 {
+  color: #006d77;
+  margin-bottom: 10px;
+}
+
+.tour p {
+  font-size: 0.9em;
+  margin-bottom: 15px;
+}
+
+.tour button {
+  padding: 8px 15px;
+  background-color: #006d77;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+.tour button:hover {
+  background-color: #83c5be;
+}
+
+/* Footer */
+footer {
+  background-color: #006d77;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  margin-top: 20px;
+  border-top: 5px solid #83c5be;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer a {
+  color: #83c5be;
+  text-decoration: none;
+}
+/* Cấu hình ảnh nền và lớp phủ cho Tour Hội An */
+.tour-hoian {
+  position: relative;
+  background-image: url("/Image/hoian.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #333; /* Màu chữ tối hơn */
+  border-radius: 8px;
+  overflow: hidden; /* Ẩn phần lớp phủ tràn ra ngoài */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.tour-hoian::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* Màu trắng mờ */
+}
+
+/* Nội dung bên trong Tour Hội An */
+.tour-hoian h3,
+.tour-hoian p,
+.tour-hoian button {
+  position: relative;
+  z-index: 1; /* Đặt nội dung trên lớp phủ */
+}
+
+/* Cấu hình ảnh nền và lớp phủ cho Tour Phú Quốc */
+.tour-phuquoc {
+  position: relative;
+  background-image: url("/Image/phuquoc.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.tour-phuquoc::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* Màu trắng mờ */
+}
+
+/* Nội dung bên trong Tour Phú Quốc */
+.tour-phuquoc h3,
+.tour-phuquoc p,
+.tour-phuquoc button {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hiệu ứng hover cho các tour */
+.tour-hoian:hover,
+.tour-phuquoc:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+/* Cấu hình ảnh nền và lớp phủ cho Tour Nha Trang */
+.tour-nhatrang {
+  position: relative;
+  background-image: url("/Image/nhatrang.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.tour-nhatrang::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* Màu trắng mờ */
+}
+
+/* Nội dung bên trong Tour Nha Trang */
+.tour-nhatrang h3,
+.tour-nhatrang p,
+.tour-nhatrang button {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cấu hình ảnh nền và lớp phủ cho Tour Vũng Tàu */
+.tour-vungtau {
+  position: relative;
+  background-image: url("/Image/vungtau.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.tour-vungtau::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* Màu trắng mờ */
+}
+
+/* Nội dung bên trong Tour Vũng Tàu */
+.tour-vungtau h3,
+.tour-vungtau p,
+.tour-vungtau button {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hiệu ứng hover cho các tour */
+.tour-hoian:hover,
+.tour-phuquoc:hover,
+.tour-nhatrang:hover,
+.tour-vungtau:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.viet {
+  text-decoration: none;
+  color: #adf1eb;
+}
+.container {
+  width: 50%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  font-size: 16px;
+  color: #555;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.form-group textarea {
+  resize: vertical;
+}
+.form-group button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+.form-group button:hover {
+  background-color: #45a049;
+}
+.container {
+  width: 50%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  font-size: 16px;
+  color: #555;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.form-group textarea {
+  resize: vertical;
+}
+.form-group button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+.form-group button:hover {
+  background-color: #45a049;
+}
